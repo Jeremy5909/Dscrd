@@ -1,0 +1,24 @@
+{
+  "name": "dscrd",
+  "version": "1.0.0",
+  "description": "A discord cli",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jeremy5909/Dscrd.git"
+  },
+  "author": "Jeremy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jeremy5909/Dscrd/issues"
+  },
+  "homepage": "https://github.com/Jeremy5909/Dscrd#readme",
+  "dependencies": {
+    "axios": "^1.7.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  }
+}
