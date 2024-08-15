@@ -17,7 +17,7 @@ app.get('/api/auth/discord/redirect', async (req,_) => {
             client_secret: process.env.ClientSecret,
             grant_type: 'authorization_code',
             code: code.toString(),
-            redirect_uri: 'http://localhost:8080/api/auth/discord/redirect'
+            redirect_uri: `http://localhost:${port}/api/auth/discord/redirect`
         });
 
         const output = await axios.post('https://discord.com/api/v10/oauth2/token', 
@@ -35,6 +35,7 @@ app.get('/api/auth/discord/redirect', async (req,_) => {
                 },
             });
 
+
             // Refresh token
             const formData1 = new url.URLSearchParams({
                 client_id: process.env.ClientID,
@@ -49,6 +50,8 @@ app.get('/api/auth/discord/redirect', async (req,_) => {
                         'Content-Type': 'application/x-www-form-urlencoded',
                     },
             });
+
+
             console.log(output.data, userinfo.data, refresh.data)
         }
     }
